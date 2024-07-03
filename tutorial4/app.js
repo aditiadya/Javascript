@@ -143,3 +143,37 @@ console.log(mul(2,5));
 
 //set timeout function 
 console.log("hi there");
+setTimeout( ()=> {
+    console.log("aditi");   //callback function
+}, 2000);   //timeout
+console.log("welcome");
+
+//set interval function
+// let id = setInterval( ()=> {
+//     console.log("hii aditi!");
+// }, 1000);
+//clearInterval(id);
+//this with arrow function
+const students = {
+    name: "aditi",
+    age: 21,
+    marks: 94.4,
+    getName: function(){
+        console.log(this);  //students' scope
+        return this.name;
+    },
+    getMarks: () => {
+        console.log(this);  //parent's scope ->window
+        return this.marks;
+    }
+};
+students.getName();
+students.getMarks();
+
+//write a function that prints "Hello World" 5 times at intervals of 2s each
+let id = setInterval( () => {
+    console.log("Hello World");
+}, 2000);
+setTimeout( () => {
+    clearInterval(id);
+}, 10000);
